@@ -3,7 +3,7 @@ pipeline {
     stages{
        stage("Build Docker Image"){
            steps{
-             sh "docker build -t 966145/newapp:v1 ."
+             sh "docker build -t 966145/newapp:${BUILD_ID} ."
           }
        }
        stage("Push Image to Repo"){
