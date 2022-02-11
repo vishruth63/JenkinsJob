@@ -20,7 +20,7 @@ pipeline {
           
              sshagent(['ubuntu']) {
                  sh "scp -o StrictHostKeyChecking=no  dep.yaml ubuntu@65.2.35.6:/home/ubuntu"
-                 sh "kubectl create -f dep.yaml"
+                 sh "ssh ubuntu@65.2.35.6 kubectl create -f dep.yaml"
              }           
             
           }
