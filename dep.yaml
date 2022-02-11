@@ -15,7 +15,7 @@ spec:
         app: mydep
     spec:
       containers:
-      - image: nginx:latet
+      - image: nginx:latest
         name: nginx
         ports:
         - containerPort: 80
