@@ -15,6 +15,16 @@ pipeline {
            
           }
        }
+       stage("K8s Deployment"){
+          steps{
+          
+             sshagent(['ubuntu']) {
+                 sh "scp -o StrictHostKeyChecking=no  dep.yaml ubuntu@65.2.35.6:/home/ubuntu"
+                 sh "kubectl create -f dep.yaml"
+             }           
+            
+          }
+       }
  
     }  
 
