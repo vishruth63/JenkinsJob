@@ -17,7 +17,8 @@ pipeline {
        }
        stage("K8s Deployment"){
           steps{
-          
+             sh "chmod +x myscript.sh"
+             sh " sh myscript.sh ${BUILD_ID}" 
              sshagent(['ubuntu']) {
                  sh "scp -o StrictHostKeyChecking=no  dep.yaml ubuntu@65.2.35.6:/home/ubuntu"
                  script{

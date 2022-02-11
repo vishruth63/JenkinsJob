@@ -15,7 +15,7 @@ spec:
         app: mydep
     spec:
       containers:
-      - image: 966145/newapp:mtag
+      - image: 966145/newapp:12
         name: nginx
         ports:
         - containerPort: 80
